@@ -21,10 +21,12 @@ def port_scan(target_ip):
     for port in ports:
         sys.stdout.flush()
         res = check(target_ip,port)
-        if res == 0: open_ports.append(port)
-
+        if res == 0: 
+            open_ports.append(port)
+            print("--[+]--",port)
+    
     if open_ports: 
         print ("Open Ports are: ") 
         print (sorted(open_ports)) 
-    else: 
+    else:
         print ("Looks like no ports are open :(")
